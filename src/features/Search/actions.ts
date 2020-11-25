@@ -16,7 +16,7 @@ export const searchResponse = createActionWithPayload<typeof SEARCH_RESPONSE, Re
 
 export const searchTrack = (page: number, per_page: number, trackName: string): ThunkAction<void, RootState, unknown, Action<any>> => async dispatch => {
     dispatch(searchRequest())
-    console.log(page)
+
     try {
         const { data: { results } } = await API.get<{ results: ResponseSearch }>('/', {
             params: {
